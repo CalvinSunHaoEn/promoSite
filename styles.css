@@ -1,0 +1,446 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('movie poster_工作區域 1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    z-index: -2;
+}
+
+/* Star Animation Background */
+.stars, .twinkling {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.stars {
+    background: #000 url('https://i.imgur.com/YKY28eT.png') repeat top center;
+    z-index: -3;
+}
+
+.twinkling {
+    background: transparent url('https://i.imgur.com/XYMF4ca.png') repeat top center;
+    animation: move-twink-back 200s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes move-twink-back {
+    from {background-position: 0 0;}
+    to {background-position: -10000px 5000px;}
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+/* Header */
+header {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: #e6c619;
+    text-shadow: 0 0 10px rgba(230, 198, 25, 0.7), 0 0 20px rgba(230, 198, 25, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(230, 198, 25, 0.7), 0 0 20px rgba(230, 198, 25, 0.5);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(230, 198, 25, 0.9), 0 0 30px rgba(230, 198, 25, 0.7), 0 0 40px rgba(230, 198, 25, 0.5);
+    }
+}
+
+.release-date {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+    color: #ffffff;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tagline {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: 0.1rem;
+    color: #e6c619;
+    text-shadow: 0 0 5px rgba(230, 198, 25, 0.5);
+}
+
+.synopsis {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 5px;
+    margin-bottom: 3rem;
+    border-left: 3px solid #e6c619;
+}
+
+.synopsis h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #e6c619;
+}
+
+.synopsis p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.synopsis p:last-child {
+    margin-bottom: 0;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 2px solid #e6c619;
+    color: #e6c619;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(230, 198, 25, 0.2);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.cta-button:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.cta-button:hover::before {
+    left: 0;
+}
+
+/* Footer */
+footer {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-icon {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #e6c619;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Trailer Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: rgba(10, 10, 15, 0.95);
+    border: 2px solid #e6c619;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(230, 198, 25, 0.3);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #e6c619;
+}
+
+.modal-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: #e6c619;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.trailer-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+}
+
+.thumbnail-img {
+    height: 120px;
+    background-color: #111;
+    border: 1px solid #333;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.thumbnail.active .thumbnail-img {
+    border-color: #e6c619;
+    box-shadow: 0 0 10px rgba(230, 198, 25, 0.5);
+}
+
+.play-icon {
+    font-size: 2rem;
+    color: #e6c619;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.thumbnail:hover .play-icon {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.thumbnail p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-top: 0.5rem;
+}
+
+.video-container {
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+    background-color: #000;
+    display: none;
+}
+
+.video-container.active {
+    display: block;
+}
+
+#trailer-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .trailer-thumbnails {
+        gap: 1rem;
+    }
+    
+    .thumbnail {
+        width: 150px;
+    }
+    
+    .thumbnail-img {
+        height: 90px;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .release-date {
+        font-size: 1rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .synopsis h2 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-content {
+        padding: 1rem;
+    }
+    
+    .trailer-thumbnails {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .thumbnail {
+        width: 200px;
+    }
+    
+    .thumbnail-img {
+        height: 120px;
+    }
+}
