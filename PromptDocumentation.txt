@@ -1,0 +1,39 @@
+Same workflow with the three trailers.
+
+1. Feed the poster to ChatGPT with the prompt: generate the script of the women in this battle scene. three sentences.
+
+Outcome:
+(Panting, eyes wide in terror, gripping her weapon tightly) "Stay back, you ugly bastard—I'm not going down without a fight!"
+
+(Dodging the alien's acidic drool, raising her glowing energy blade) "You’ve wiped out my crew, but I swear, I’ll send you straight to hell!"
+
+(Bracing for impact as the alien lunges, sparks flying around her) "Come on then—let’s finish this!"
+
+(Heart pounding, turning to fire her weapon at the alien creeping behind her) "Not today, you nightmare fuel—I see you!"
+
+(Eyes darting around for an escape route, gritting her teeth as she unloads rounds into the beast) "I just need one clean shot—come on, come on!"
+
+(Glancing at the flickering ship’s systems, realizing her time is running out) "If I can’t kill it, I’ll blow this whole damn place to space dust!"
+
+(Hissing, its inner jaw snapping forward, dripping with acidic saliva) "Ssshhhkkk... You... run... but nowhere... to hide..."
+
+(Claws scraping against the metal walls, voice guttural and inhuman) "Your kind... weak... flesh... delicious..."
+
+(Lunging forward, dodging gunfire, screeching with rage) "Fight... all... you... want... You. Are. MINE!"
+
+
+2. Generate the voice actor in 11LAB. Preset for women. I generated a monster voice actor with the prompt: A deep monster voice, evil and mysterious. Alien-textured sound. Creepy and strange.
+
+Feed the script to the voice actor. Adjust the emotion of the speech takes time.
+
+3. Generate some sound effects like a shot in 11LAB. Prompt: laser gun shot. Sound of battle
+
+4. Background music generated in Stable Audio.
+Three tracks are generated. 
+Prompt 1: a miserable movie background music with the feeling of silence in space, pop beat
+Prompt 2: An intense movie background music with the feeling of rapid battle in space, trap beat
+Prompt 3: Epic movie background music with the feeling of void in space, Thrilling atmosphere
+
+5. Put the materials together in Capcut. Adding some transition and animation into the graphic. No AI tools in this part.
+
+-Side notes: I tried to generate videos with the runway to make my poster into a video trailer. It didn't work well even I prompted in different ways; it just not moving.
