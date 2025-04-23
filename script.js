@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Fade in elements on scroll
-    const fadeElements = document.querySelectorAll('.synopsis, .cta-buttons');
+    const fadeElements = document.querySelectorAll('.featured-video, .synopsis, .cta-buttons');
     
     const fadeInOptions = {
         threshold: 0.1,
@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('trailer-modal');
     const closeModal = document.querySelector('.close-modal');
     const trailerPlayer = document.getElementById('trailer-player');
+    const youtubePlayer = document.getElementById('youtube-player');
     const videoContainer = document.querySelector('.video-container');
     const thumbnails = document.querySelectorAll('.thumbnail');
     
@@ -111,19 +112,48 @@ document.addEventListener('DOMContentLoaded', function() {
         // Pause the video when modal is closed
         trailerPlayer.pause();
         trailerPlayer.currentTime = 0;
+        
+        // Stop YouTube video by clearing the src
+        if (youtubePlayer.src) {
+            youtubePlayer.src = '';
+        }
     }
     
     // Function to load and play a video
     function loadVideo(videoSrc) {
-        // Update the video source
-        trailerPlayer.querySelector('source').src = videoSrc;
-        trailerPlayer.load();
-        
         // Show the video container
         videoContainer.classList.add('active');
         
-        // Play the video
-        trailerPlayer.play();
+        // Check if this is a YouTube video
+        if (videoSrc.includes('youtube.com') || videoSrc.includes('youtu.be')) {
+            // Hide regular video player and show YouTube player
+            trailerPlayer.classList.remove('active');
+            youtubePlayer.classList.add('active');
+            
+            // Convert YouTube URL to embed format
+            let videoId = '';
+            if (videoSrc.includes('youtube.com/shorts/')) {
+                videoId = videoSrc.split('/shorts/')[1].split('?')[0];
+            } else if (videoSrc.includes('youtube.com/watch')) {
+                videoId = new URL(videoSrc).searchParams.get('v');
+            } else if (videoSrc.includes('youtu.be/')) {
+                videoId = videoSrc.split('youtu.be/')[1].split('?')[0];
+            }
+            
+            // Set the YouTube iframe src
+            youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+        } else {
+            // Hide YouTube player and show regular video player
+            youtubePlayer.classList.remove('active');
+            trailerPlayer.classList.add('active');
+            
+            // Update the video source
+            trailerPlayer.querySelector('source').src = videoSrc;
+            trailerPlayer.load();
+            
+            // Play the video
+            trailerPlayer.play();
+        }
         
         // Update active thumbnail
         thumbnails.forEach(thumb => {
