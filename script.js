@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Fade in elements on scroll
-    const fadeElements = document.querySelectorAll('.featured-video, .synopsis, .cta-buttons');
+    const fadeElements = document.querySelectorAll('.featured-video, .synopsis, .fan-reviews, .cta-buttons');
     
     const fadeInOptions = {
         threshold: 0.1,
